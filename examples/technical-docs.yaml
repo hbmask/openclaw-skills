@@ -1,0 +1,42 @@
+# 技术文档搜索示例
+# 适合开发者查找技术资料、文档、教程
+
+# 示例 1：编程语言教程
+query: "Rust ownership borrowing explained"
+engine: "bing"
+count: 10
+
+# 示例 2：框架文档搜索
+query: "Next.js 14 App Router documentation"
+engine: "bing"
+count: 8
+
+# 示例 3：API 参考
+query: "GraphQL schema definition best practices"
+engine: "bing"
+count: 5
+
+# 示例 4：问题排查
+query: "Docker container networking issues troubleshooting"
+engine: "bing"
+count: 5
+
+# 示例 5：最佳实践
+query: "microservices architecture patterns best practices"
+engine: "bing"
+count: 10
+
+# 示例 6：性能优化
+query: "PostgreSQL query optimization techniques"
+engine: "bing"
+count: 8
+
+# 示例 7：安全相关
+query: "OAuth 2.0 implementation security best practices"
+engine: "bing"
+count: 5
+
+# 示例 8：工具使用
+query: "Git advanced commands cheat sheet"
+engine: "bing"
+count: 5

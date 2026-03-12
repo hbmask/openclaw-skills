@@ -1,0 +1,42 @@
+# 新闻资讯搜索示例
+# 获取最新新闻和资讯
+
+# 示例 1：科技新闻
+query: "AI artificial intelligence latest news 2024"
+engine: "bing"
+count: 10
+
+# 示例 2：行业动态
+query: "电动汽车 新能源汽车 行业新闻"
+engine: "baidu"
+count: 8
+
+# 示例 3：产品发布
+query: "Apple iPhone 16 release news"
+engine: "bing"
+count: 5
+
+# 示例 4：政策法规
+query: "数据安全法 个人信息保护法 最新解读"
+engine: "baidu"
+count: 5
+
+# 示例 5：市场分析
+query: "2024年科技行业趋势分析"
+engine: "baidu"
+count: 8
+
+# 示例 6：国际新闻
+query: "global tech companies layoffs 2024"
+engine: "bing"
+count: 5
+
+# 示例 7：创业投资
+query: "AI创业公司 融资 2024"
+engine: "baidu"
+count: 5
+
+# 示例 8：开源动态
+query: "open source trending projects 2024"
+engine: "bing"
+count: 10

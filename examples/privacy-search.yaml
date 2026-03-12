@@ -1,0 +1,42 @@
+# 隐私保护搜索示例
+# 使用 DuckDuckGo 引擎，不追踪用户搜索
+
+# 示例 1：隐私工具搜索
+query: "best privacy-focused browsers 2024"
+engine: "duckduckgo"
+count: 10
+
+# 示例 2：安全软件
+query: "open source VPN alternatives"
+engine: "duckduckgo"
+count: 8
+
+# 示例 3：隐私保护
+query: "how to protect online privacy"
+engine: "duckduckgo"
+count: 5
+
+# 示例 4：加密工具
+query: "end-to-end encrypted messaging apps"
+engine: "duckduckgo"
+count: 8
+
+# 示例 5：匿名服务
+query: "anonymous search engines comparison"
+engine: "duckduckgo"
+count: 5
+
+# 示例 6：数据保护
+query: "GDPR compliance tools for websites"
+engine: "duckduckgo"
+count: 5
+
+# 示例 7：安全实践
+query: "password manager security best practices"
+engine: "duckduckgo"
+count: 8
+
+# 示例 8：隐私法规
+query: "data privacy regulations worldwide"
+engine: "duckduckgo"
+count: 10

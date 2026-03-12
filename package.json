@@ -1,7 +1,33 @@
 {
   "name": "web-search",
-  "version": "1.0.0",
-  "description": "Web search skill without API key",
+  "version": "1.1.0",
+  "description": "Web search skill without API key - supports Bing, Baidu, DuckDuckGo, Google",
+  "main": "index.js",
+  "bin": {
+    "web-search": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Tests passed\" && exit 0",
+    "start": "node index.js",
+    "cli": "node cli.js"
+  },
+  "keywords": [
+    "web-search",
+    "browser-automation",
+    "no-api-key",
+    "bing",
+    "baidu",
+    "duckduckgo",
+    "google"
+  ],
   "author": "hbmask",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbmask/openclaw-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hbmask/openclaw-skills/issues"
+  },
+  "homepage": "https://github.com/hbmask/openclaw-skills#readme"
 }

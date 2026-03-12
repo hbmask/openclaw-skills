@@ -1,0 +1,32 @@
+# 中文内容搜索示例
+# 推荐使用 Baidu 引擎以获得更好的中文内容搜索结果
+
+# 示例 1：中文技术文档
+query: "Go语言并发编程最佳实践"
+engine: "baidu"
+count: 10
+
+# 示例 2：国内新闻资讯
+query: "2024年人工智能最新进展"
+engine: "baidu"
+count: 8
+
+# 示例 3：中文教程资源
+query: "Kubernetes 入门教程 中文"
+engine: "baidu"
+count: 5
+
+# 示例 4：国内技术社区
+query: "掘金 稀土开发者大会"
+engine: "baidu"
+count: 5
+
+# 示例 5：中文文档搜索
+query: "企业微信 API 开发文档"
+engine: "baidu"
+count: 5
+
+# 示例 6：国内开源项目
+query: "开源中国 热门项目"
+engine: "baidu"
+count: 10
