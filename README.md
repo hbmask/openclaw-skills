@@ -1,18 +1,18 @@
-# Web Search Skill
+# Web Search Skill 网页搜索技能
 
-A free web search skill for OpenClaw - **no API key required!**
+OpenClaw 免费网页搜索技能 - **无需 API Key！**
 
-## Features
+## 特性
 
-- 🔍 **No API Key Required** - Uses browser automation
-- 🌐 **Multi-Engine Support** - Bing, Baidu, DuckDuckGo, Google
-- 📊 **Structured Results** - Returns title, URL, snippet, source
-- 🔄 **Smart Engine Selection** - Auto-recommend based on language
-- 🇨🇳 **Chinese Support** - Baidu for Chinese content
+- 🔍 **无需 API Key** - 使用浏览器自动化实现
+- 🌐 **多引擎支持** - Bing、Baidu、DuckDuckGo、Google
+- 📊 **结构化结果** - 返回标题、URL、摘要、来源
+- 🔄 **智能引擎选择** - 根据语言自动推荐
+- 🇨🇳 **中文支持** - Baidu 引擎专门优化中文内容
 
-## Installation
+## 安装
 
-Place the `web-search` folder in your OpenClaw skills directory:
+将 `web-search` 文件夹放置在 OpenClaw 技能目录中：
 
 ```
 skills/
@@ -24,47 +24,47 @@ skills/
     └── package.json
 ```
 
-## Usage
+## 使用方法
 
 ```javascript
 const { webSearch, search, formatToMarkdown } = require('./skills/web-search');
 
-// Simple search
+// 简单搜索
 const result = await search({
-  query: "latest AI news 2024",
+  query: "最新 AI 动态 2024",
   count: 5,
   engine: "bing"
 });
 
-// Format as Markdown
+// 格式化为 Markdown
 console.log(formatToMarkdown(result));
 ```
 
-## Search Parameters
+## 搜索参数
 
-| Parameter | Type | Required | Default | Description |
+| 参数 | 类型 | 必填 | 默认值 | 说明 |
 |-----------|------|----------|---------|-------------|
-| query | string | Yes | - | Search keywords |
-| count | number | No | 5 | Number of results (1-10) |
-| engine | string | No | bing | Search engine: bing, baidu, duckduckgo, google |
-| language | string | No | auto | Language: zh, en |
+| query | string | 是 | - | 搜索关键词 |
+| count | number | 否 | 5 | 结果数量 (1-10) |
+| engine | string | 否 | bing | 搜索引擎: bing, baidu, duckduckgo, google |
+| language | string | 否 | auto | 语言: zh, en |
 
-## Supported Search Engines
+## 支持的搜索引擎
 
-| Engine | Language | Status |
+| 引擎 | 语言 | 状态 |
 |--------|----------|--------|
-| Bing | English | ✅ Primary |
-| Baidu | Chinese | ✅ Primary |
-| DuckDuckGo | Multi | ✅ Supported |
-| Google | Multi | ⚠️ May require CAPTCHA |
+| Bing | 英文 | ✅ 主要支持 |
+| Baidu | 中文 | ✅ 主要支持 |
+| DuckDuckGo | 多语言 | ✅ 支持 |
+| Google | 多语言 | ⚠️ 可能触发验证码 |
 
-## Testing
+## 测试
 
 ```bash
 cd skills/web-search
 node test.js
 ```
 
-## License
+## 许可证
 
-MIT License
+MIT 许可证

@@ -1,89 +1,89 @@
 ---
 name: web-search
-description: Web search skill using browser automation - no API key required. Supports Bing, Baidu, DuckDuckGo, Google. Use when you need to search the web for current information, research topics, or find specific content.
+description: 基于浏览器自动化的网页搜索技能 - 无需 API Key。支持 Bing、Baidu、DuckDuckGo、Google。适用于搜索最新信息、研究主题或查找特定内容。
 metadata:
   openclaw:
     requires:
       bins: []
 ---
 
-# Web Search Skill
+# Web Search Skill 网页搜索技能
 
-A free web search skill that uses browser automation - **no API key required!**
+免费的网页搜索技能，使用浏览器自动化 - **无需 API Key！**
 
-## 🌟 Features
+## 🌟 特性
 
-- 🔍 **No API Key Required** - Uses browser automation
-- 🌐 **Multi-Engine Support** - Bing, Baidu, DuckDuckGo, Google
-- 📊 **Structured Results** - Returns title, URL, snippet, source
-- 🔄 **Smart Engine Selection** - Auto-recommend based on language
-- 🛡️ **Error Handling** - Graceful error handling and fallback
-- 🇨🇳 **Chinese Support** - Baidu for Chinese content
-- 📝 **Markdown Output** - Formatted results ready for chat
+- 🔍 **无需 API Key** - 使用浏览器自动化实现
+- 🌐 **多引擎支持** - Bing、Baidu、DuckDuckGo、Google
+- 📊 **结构化结果** - 返回标题、URL、摘要、来源
+- 🔄 **智能引擎选择** - 根据语言自动推荐引擎
+- 🛡️ **错误处理** - 完善的错误处理和降级机制
+- 🇨🇳 **中文支持** - Baidu 引擎专门优化中文内容
+- 📝 **Markdown 输出** - 格式化结果，可直接用于对话
 
-## 📁 File Structure
+## 📁 文件结构
 
 ```
 skills/web-search/
-├── index.js          # Main logic - webSearch function
-├── engines.js        # Search engine configurations
-├── parser.js         # Result parsing and extraction
-├── cli.js            # CLI interface (optional)
-├── package.json      # Package metadata
-├── README.md         # Quick start guide
-└── SKILL.md          # This documentation
+├── index.js          # 主逻辑 - webSearch 函数
+├── engines.js        # 搜索引擎配置
+├── parser.js         # 结果解析和提取
+├── cli.js            # CLI 命令行接口（可选）
+├── package.json      # 包元数据
+├── README.md         # 快速开始指南
+└── SKILL.md          # 本文档
 ```
 
-## 🔧 When to Use
+## 🔧 使用场景
 
-Use this skill when you need to:
-- Search for current information
-- Research on any topic
-- Find specific websites or content
-- Get latest news and updates
-- Search Chinese content (use Baidu)
-- Compare results across multiple search engines
+适用于以下情况：
+- 搜索最新信息
+- 研究任何主题
+- 查找特定网站或内容
+- 获取最新新闻和动态
+- 搜索中文内容（使用 Baidu）
+- 对比多个搜索引擎的结果
 
-## 🚀 Usage
+## 🚀 使用方法
 
-The skill provides the `webSearch` function with the following parameters:
+技能提供 `webSearch` 函数，支持以下参数：
 
 ```yaml
-query: "your search query"  # Required - search keywords
-count: 5                     # Optional - number of results (1-10)
-engine: "bing"              # Optional - bing, baidu, duckduckgo, google
-language: "zh"              # Optional - zh, en (for auto-recommendation)
+query: "你的搜索关键词"  # 必填 - 搜索关键词
+count: 5                     # 可选 - 结果数量 (1-10)
+engine: "bing"              # 可选 - bing, baidu, duckduckgo, google
+language: "zh"              # 可选 - zh, en（用于自动推荐引擎）
 ```
 
-### Response Structure
+### 返回结果结构
 
 ```json
 {
   "success": true,
-  "query": "search query",
+  "query": "搜索关键词",
   "engine": "bing",
   "count": 5,
   "results": [
     {
       "rank": 1,
-      "title": "Result Title",
+      "title": "结果标题",
       "url": "https://example.com",
-      "snippet": "Result description...",
+      "snippet": "结果描述...",
       "source": "example.com"
     }
   ]
 }
 ```
 
-## 📖 Examples
+## 📖 使用示例
 
-### Basic Search (English)
+### 基础搜索（英文）
 ```yaml
 query: "latest AI news 2024"
 count: 5
 ```
 
-### Advanced Search (Chinese)
+### 高级搜索（中文）
 ```yaml
 query: "人工智能 最新进展"
 count: 10
@@ -91,30 +91,30 @@ engine: "baidu"
 language: "zh"
 ```
 
-### Multi-Engine Search
-Use `searchMultiple` to search across all engines:
+### 多引擎搜索
+使用 `searchMultiple` 在所有引擎上搜索：
 ```yaml
 query: "Go language best practices"
 count: 5
 engines: ["bing", "baidu", "duckduckgo", "google"]
 ```
 
-### Programmatic Usage
+### 编程方式调用
 ```javascript
 const { webSearch, search, searchMultiple, formatToMarkdown } = require('./index');
 
-// Simple search
+// 简单搜索
 const result = await search({
   query: "OpenCLaw browser automation",
   count: 5,
   engine: "bing"
 });
 
-// Format as Markdown
+// 格式化为 Markdown
 const markdown = formatToMarkdown(result);
 console.log(markdown);
 
-// Multi-engine search
+// 多引擎搜索
 const results = await searchMultiple({
   query: "web search without API",
   count: 3,
@@ -122,178 +122,178 @@ const results = await searchMultiple({
 });
 ```
 
-## 🌐 Supported Engines
+## 🌐 支持的搜索引擎
 
-| Engine | Status | Language | Notes |
+| 引擎 | 状态 | 语言 | 说明 |
 |--------|--------|----------|-------|
-| Bing | ✅ Primary | English | Best for general searches |
-| Baidu | ✅ Primary | Chinese | Best for Chinese content |
-| DuckDuckGo | ✅ Supported | Multi | Privacy-focused alternative |
-| Google | ⚠️ Limited | Multi | May require CAPTCHA handling |
+| Bing | ✅ 主要支持 | 英文 | 通用搜索首选 |
+| Baidu | ✅ 主要支持 | 中文 | 中文内容首选 |
+| DuckDuckGo | ✅ 支持 | 多语言 | 注重隐私的替代选择 |
+| Google | ⚠️ 有限支持 | 多语言 | 可能需要处理验证码 |
 
-### Engine Recommendations
+### 引擎推荐
 
-| Scenario | Recommended Engine |
+| 场景 | 推荐引擎 |
 |----------|-------------------|
-| English queries | Bing (default) |
-| Chinese queries | Baidu |
-| Privacy focus | DuckDuckGo |
-| All engines | Use `searchMultiple` |
+| 英文查询 | Bing（默认） |
+| 中文查询 | Baidu |
+| 注重隐私 | DuckDuckGo |
+| 所有引擎 | 使用 `searchMultiple` |
 
-## ⚙️ How It Works
+## ⚙️ 工作原理
 
-This skill integrates with OpenClaw's built-in browser tool:
+本技能与 OpenClaw 内置的浏览器工具集成：
 
-1. **Query Processing** - Clean and validate search query
-2. **Engine Selection** - Choose appropriate search engine
-3. **URL Generation** - Build search engine URL
-4. **Browser Automation** - Open URL and capture snapshot
-5. **Result Parsing** - Extract structured results from DOM
-6. **Output Formatting** - Return formatted results
+1. **查询处理** - 清理和验证搜索关键词
+2. **引擎选择** - 选择合适的搜索引擎
+3. **URL 生成** - 构建搜索引擎 URL
+4. **浏览器自动化** - 打开 URL 并获取快照
+5. **结果解析** - 从 DOM 中提取结构化结果
+6. **输出格式化** - 返回格式化的结果
 
-### Search Flow
+### 搜索流程
 
 ```
-User Request
+用户请求
     ↓
-[Validate Query] → Valid?
+[验证查询] → 有效?
     ↓ 是          ↓ 否
-[Select Engine]  Return Error
+[选择引擎]  返回错误
     ↓
-[Build Search URL]
+[构建搜索 URL]
     ↓
-[Browser: Open URL]
+[浏览器：打开 URL]
     ↓
-[Browser: Get Snapshot]
+[浏览器：获取快照]
     ↓
-[Parse Results]
+[解析结果]
     ↓
-[Return Structured Data]
+[返回结构化数据]
 ```
 
-## 🛠️ Error Handling
+## 🛠️ 错误处理
 
-The skill includes comprehensive error handling:
+技能包含完善的错误处理机制：
 
-| Error Type | Handling Strategy |
+| 错误类型 | 处理策略 |
 |------------|-------------------|
-| Invalid Query | Returns error with suggestions |
-| Unknown Engine | Returns error with valid engine list |
-| Empty Results | Returns success with empty array |
-| Browser Timeout | Suggests fallback engines |
-| DOM Parsing | Uses backup parsing methods |
+| 无效查询 | 返回错误并提供建议 |
+| 未知引擎 | 返回错误并列出有效引擎 |
+| 空结果 | 返回成功状态和空数组 |
+| 浏览器超时 | 建议使用备用引擎 |
+| DOM 解析失败 | 使用备用解析方法 |
 
-### Error Response Format
+### 错误响应格式
 
 ```json
 {
   "success": false,
-  "error": "Error message",
-  "suggestions": "Helpful suggestions",
+  "error": "错误信息",
+  "suggestions": "有用的建议",
   "validEngines": ["bing", "baidu", "duckduckgo", "google"]
 }
 ```
 
-## 📊 CLI Usage
+## 📊 CLI 命令行使用
 
 ```bash
-# Basic search
-node index.js "search query"
+# 基础搜索
+node index.js "搜索关键词"
 
-# Advanced options
-node index.js "search query" --count 10 --engine bing --language zh
+# 高级选项
+node index.js "搜索关键词" --count 10 --engine bing --language zh
 
-# JSON output
-node index.js "search query" --json
+# JSON 输出
+node index.js "搜索关键词" --json
 
-# Multi-engine search
-node index.js "search query" --multi
+# 多引擎搜索
+node index.js "搜索关键词" --multi
 
-# Help
+# 帮助信息
 node index.js --help
 ```
 
-## 🔍 Result Parser
+## 🔍 结果解析器
 
-The parser uses multiple strategies:
+解析器使用多种策略：
 
-1. **Primary Parsing** - Uses engine-specific selectors
-2. **Backup Parsing** - Generic DOM traversal if primary fails
-3. **Result Deduplication** - Removes duplicate results
-4. **Field Extraction** - Title, URL, snippet, source
+1. **主要解析** - 使用引擎特定的选择器
+2. **备用解析** - 如果主要解析失败，使用通用 DOM 遍历
+3. **结果去重** - 移除重复结果
+4. **字段提取** - 标题、URL、摘要、来源
 
-### Parser Functions
+### 解析器函数
 
-| Function | Purpose |
+| 函数 | 用途 |
 |----------|---------|
-| `parseSearchResults` | Main result extraction |
-| `filterResults` | Remove invalid results |
-| `formatOutput` | Format as structured data |
-| `generateSummary` | Create result summaries |
+| `parseSearchResults` | 主要结果提取 |
+| `filterResults` | 过滤无效结果 |
+| `formatOutput` | 格式化为结构化数据 |
+| `generateSummary` | 生成结果摘要 |
 
-## 📝 Output Formats
+## 📝 输出格式
 
-### Markdown
+### Markdown 格式
 ```markdown
 ## 🔍 搜索结果 (Bing)
-**搜索关键词**: AI latest news
+**搜索关键词**: AI 最新动态
 **结果数量**: 5
 
-### 1. AI News 2024
+### 1. AI 新闻 2024
 **URL**: https://example.com
 **来源**: example.com
-**摘要**: Latest AI developments...
+**摘要**: 最新 AI 发展动态...
 ```
 
-### JSON
+### JSON 格式
 ```json
 {
   "success": true,
-  "query": "AI latest news",
+  "query": "AI 最新动态",
   "engine": "bing",
   "count": 5,
   "results": [...]
 }
 ```
 
-## 🎯 Best Practices
+## 🎯 最佳实践
 
-1. **Use appropriate engine for language**
-   - English queries → Bing (default)
-   - Chinese queries → Baidu
+1. **根据语言选择合适的引擎**
+   - 英文查询 → Bing（默认）
+   - 中文查询 → Baidu
 
-2. **Adjust count parameter**
-   - Start with 3-5 results for quick results
-   - Use 10 for comprehensive search
+2. **调整结果数量参数**
+   - 快速查找用 3-5 条结果
+   - 深度调研用 10 条结果
 
-3. **Handle empty results**
-   - Check `success` and `results.length`
-   - Try alternative engines if needed
+3. **处理空结果**
+   - 检查 `success` 和 `results.length`
+   - 必要时尝试其他引擎
 
-4. **Cache results when possible**
-   - Search results don't change frequently
-   - Consider caching for repeated queries
+4. **适当缓存结果**
+   - 搜索结果不会频繁变化
+   - 重复查询可考虑缓存
 
-## 🚨 Known Limitations
+## 🚨 已知限制
 
-1. **CAPTCHA Protection**
-   - Google may require CAPTCHA
-   - Use Bing or Baidu for reliability
-   - Consider rate limiting
+1. **验证码保护**
+   - Google 可能需要验证码
+   - 建议使用 Bing 或 Baidu 以保证稳定性
+   - 注意控制请求频率
 
-2. **DOM Structure Changes**
-   - Search engines may update layouts
-   - Parser may need updates
-   - Check engine changelogs
+2. **DOM 结构变化**
+   - 搜索引擎可能更新页面布局
+   - 解析器可能需要更新
+   - 关注引擎更新日志
 
-3. **Language Limitations**
-   - Results may be in different language
-   - Use `language` parameter to influence
-   - Baidu is best for Chinese content
+3. **语言限制**
+   - 结果可能是不同语言
+   - 使用 `language` 参数影响结果
+   - Baidu 最适合中文内容
 
-## 📦 Installation
+## 📦 安装
 
-The skill is designed to work within OpenClaw's skill framework:
+技能设计为在 OpenClaw 技能框架内工作：
 
 ```
 skills/
@@ -305,22 +305,22 @@ skills/
     └── package.json
 ```
 
-No additional dependencies required!
+无需额外依赖！
 
-## 🤝 Contributing
+## 🤝 贡献
 
-Contributions welcome! Areas for improvement:
+欢迎贡献！改进方向：
 
-- Add more search engines
-- Improve parsing reliability
-- Add caching layer
-- Support search filters
-- Add result ranking
+- 添加更多搜索引擎
+- 提高解析可靠性
+- 添加缓存层
+- 支持搜索过滤器
+- 添加结果排序
 
-## 📄 License
+## 📄 许可证
 
-MIT License - Free and open source
+MIT 许可证 - 免费开源
 
 ---
 
-**No API keys. No limits. Just search.** 🚀
+**无需 API Key。无限制。尽情搜索。** 🚀
